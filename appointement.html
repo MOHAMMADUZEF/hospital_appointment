@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare Hospital - Appointment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🏥</span> HealthCare Hospital
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="index.html#services">Services</a>
+                <a href="emergency.html">Emergency</a>
+                <a href="appointement.html">Appointment</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Appointment Hero -->
+    <section class="page-hero">
+        <h1>Book an Appointment</h1>
+        <p>Select your preferred doctor and appointment time</p>
+    </section>
+
+    <!-- Appointment -->
+    <main class="container">
+        <div class="appointment-box">
+            <h2>Patient Appointment Form</h2>
+
+            <form id="appointmentForm">
+                <div class="form-grid">
+
+                    <!-- Patient Name -->
+                    <div class="form-group">
+                        <label for="patientName">Patient Name *</label>
+                        <input type="text" id="patientName" placeholder="Enter patient name" required>
+                    </div>
+
+                    <!-- Age -->
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" placeholder="Enter age" min="1" max="120" required>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="form-group">
+                        <label for="gender">Gender *</label>
+                        <select id="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" placeholder="Enter phone number" pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter email address">
+                    </div>
+
+                    <!-- Doctor -->
+                    <div class="form-group">
+                        <label for="doctor">Select Doctor *</label>
+                        <select id="doctor" required>
+                            <option value="">Select a Doctor</option>
+                            <option value="Dr. Rajesh Kumar" data-specialty="Cardiologist" data-time="10:00 AM - 2:00 PM">
+                                Dr. Rajesh Kumar - Cardiologist
+                            </option>
+                            <option value="Dr. Priya Sharma" data-specialty="Dermatologist" data-time="9:00 AM - 1:00 PM">
+                                Dr. Priya Sharma - Dermatologist
+                            </option>
+                            <option value="Dr. Amit Patel" data-specialty="Neurologist" data-time="2:00 PM - 6:00 PM">
+                                Dr. Amit Patel - Neurologist
+                            </option>
+                            <option value="Dr. Sneha Reddy" data-specialty="Pediatrician" data-time="10:00 AM - 4:00 PM">
+                                Dr. Sneha Reddy - Pediatrician
+                            </option>
+                            <option value="Dr. Kayum" data-specialty="Orthopedic Surgeon" data-time="11:00 AM - 5:00 PM">
+                                Dr. Kayum - Orthopedic Surgeon
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Doctor Information -->
+                    <div class="doctor-info form-group full-width" id="doctorInfo">
+                        <h4 id="doctorSpecialty"></h4>
+                        <p id="doctorTime"></p>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="form-group">
+                        <label for="date">Appointment Date *</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <!-- Time -->
+                    <div class="form-group">
+                        <label for="time">Appointment Time *</label>
+                        <select id="time" required>
+                            <option value="">Select Time</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="01:00 PM">01:00 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                        </select>
+                    </div>
+
+                    <!-- Symptoms -->
+                    <div class="form-group full-width">
+                        <label for="symptoms">Symptoms / Reason for Visit</label>
+                        <textarea id="symptoms" placeholder="Describe your symptoms or reason for consultation..."></textarea>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="submit-btn">📅 Book Appointment</button>
+            </form>
+        </div>
+    </main>
+    </div>
+    <!-- Success Popup -->
+<div class="popup" id="successPopup">
+    <div class="popup-content">
+
+        <div class="popup-icon">✓</div>
+
+        <h2>Appointment Booked!</h2>
+
+        <p class="popup-subtitle">
+            Your appointment has been successfully confirmed.
+        </p>
+
+        <div class="popup-details" id="popupDetails"></div>
+
+        <button class="popup-btn" id="closePopupBtn">
+            OK, Got It
+        </button>
+
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>🏥 HealthCare Hospital</strong></p>
+        <p>© 2026 HealthCare Hospital. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
